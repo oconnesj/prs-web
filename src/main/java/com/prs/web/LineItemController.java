@@ -62,6 +62,17 @@ public class LineItemController {
 	}
 	
 	
+	
+	@GetMapping("/ines-for-pr/{id}")
+	public JsonResponse  getLineItemsProductRequestID (@PathVariable int id) {
+		JsonResponse jr = null;
+		try {
+			jr = JsonResponse.getInstance(lineItemRepo.findByRequestId(id));
+		} catch (Exception e) {
+			jr = JsonResponse.getInstance(e);
+		}
+		return jr;		
+	}
 	// create method 
 	@PostMapping("/")
 	public JsonResponse createLineItem(@RequestBody LineItem li) {
