@@ -63,6 +63,8 @@ public class LineItem {
 	public String toString() {
 		return "LineItem [id=" + id + ", request=" + request + ", product=" + product + ", quanity=" + quanity + "]";
 	}
+
+	
 	
 	
 	

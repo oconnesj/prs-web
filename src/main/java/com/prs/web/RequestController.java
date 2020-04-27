@@ -17,7 +17,7 @@ import com.prs.db.RequestRepository;
 
 public class RequestController {
 	@Autowired
-	private RequestRepository requestRepo;
+	public RequestRepository requestRepo;
 
 	@GetMapping("/")
 	public JsonResponse list() {
