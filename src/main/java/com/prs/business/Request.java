@@ -24,8 +24,6 @@ public class Request {
 	
 	public Request() {
 		super();
-		
-		
 	}
 
 	public Request(int id, User user, String description, String justification, LocalDate dateNeeded,
@@ -107,11 +105,11 @@ public class Request {
 		this.total = total;
 	}
 
-	public LocalDate getSumbitedDate() {
+	public LocalDate getSubmittedDate() {
 		return submittedDate;
 	}
 
-	public void setSumbitedDate(LocalDate submittedDate) {
+	public void setSubmittedDate(LocalDate submittedDate) {
 		this.submittedDate = submittedDate;
 	}
 
@@ -130,6 +128,7 @@ public class Request {
 				+ ", total=" + total + ", submittedDate=" + submittedDate + ", reasonForRejection=" + reasonForRejection
 				+ "]";
 	}
+	
 	
 	
 
