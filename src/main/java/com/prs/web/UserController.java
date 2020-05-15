@@ -12,7 +12,7 @@ import com.prs.business.User;
 import com.prs.db.UserRepository;
 
 
-
+@CrossOrigin()
 @RestController
 @RequestMapping("/users")
 

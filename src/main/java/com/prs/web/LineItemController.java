@@ -55,7 +55,7 @@ public class LineItemController {
 		return jr;
 	}
 
-	@GetMapping("/ines-for-pr/{id}")
+	@GetMapping("/lines-for-pr/{id}")
 	public JsonResponse getLineItemsProductRequestID(@PathVariable int id) {
 		JsonResponse jr = null;
 		try {

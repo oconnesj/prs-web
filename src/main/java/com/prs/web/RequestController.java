@@ -1,6 +1,6 @@
 package com.prs.web;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,18 +56,21 @@ public class RequestController {
 	@PostMapping("/")
 	public JsonResponse createRequest(@RequestBody Request r) {
 		JsonResponse jr = null;
-
+		r.setSubmittedDate(LocalDateTime.now());
+		r.setStatus("New");
 		try {
 			r = requestRepo.save(r);
 			jr = JsonResponse.getInstance(r);
 		} catch (DataIntegrityViolationException dive) {
 			jr = JsonResponse.getErrorInstance(dive.getRootCause().getMessage());
 			dive.printStackTrace();
+		} catch (Exception e) {
+			jr = JsonResponse.getErrorInstance("Error creating request: " + e.getMessage());
+			e.printStackTrace();
 		}
-
 		return jr;
-
 	}
+
 	// update method
 
 	@PutMapping("/")
@@ -110,7 +113,7 @@ public class RequestController {
 			r.setStatus("Review");
 		}
 
-		r.setSubmittedDate(LocalDate.now());
+		r.setSubmittedDate(LocalDateTime.now());
 		try {
 			jr = JsonResponse.getInstance(requestRepo.save(r));
 		} catch (Exception e) {
