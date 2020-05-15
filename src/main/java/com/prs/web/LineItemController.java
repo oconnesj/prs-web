@@ -12,6 +12,7 @@ import com.prs.business.LineItem;
 import com.prs.business.Request;
 import com.prs.db.LineItemRepository;
 import com.prs.db.RequestRepository;
+@CrossOrigin 
 
 @RestController
 @RequestMapping("/line-items")
@@ -55,7 +56,7 @@ public class LineItemController {
 		return jr;
 	}
 
-	@GetMapping("/lines-for-pr/{id}")
+	@GetMapping("/ines-for-pr/{id}")
 	public JsonResponse getLineItemsProductRequestID(@PathVariable int id) {
 		JsonResponse jr = null;
 		try {

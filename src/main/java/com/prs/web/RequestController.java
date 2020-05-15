@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import com.prs.business.JsonResponse;
 import com.prs.business.Request;
 import com.prs.db.RequestRepository;
-
+@CrossOrigin 
 @RestController
 @RequestMapping("/requests")
 

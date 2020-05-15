@@ -12,6 +12,7 @@ import com.prs.business.Product;
 import com.prs.db.ProductRepository;
 
 
+@CrossOrigin 
 
 @RestController
 @RequestMapping("/products")
