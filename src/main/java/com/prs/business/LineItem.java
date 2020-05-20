@@ -51,11 +51,11 @@ public class LineItem {
 		this.product = product;
 	}
 
-	public int getQuanity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuanity(int quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 

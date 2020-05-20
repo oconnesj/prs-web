@@ -56,7 +56,7 @@ public class LineItemController {
 		return jr;
 	}
 
-	@GetMapping("/ines-for-pr/{id}")
+	@GetMapping("/lines-for-pr/{id}")
 	public JsonResponse getLineItemsProductRequestID(@PathVariable int id) {
 		JsonResponse jr = null;
 		try {
@@ -130,7 +130,7 @@ public class LineItemController {
 		// loop thru list to sum a total
 		double total = 0.0;
 		for (LineItem line : lines) {
-			total += line.getQuanity() * line.getProduct().getPrice();
+			total += line.getQuantity() * line.getProduct().getPrice();
 		}
 		// save that total in the User instance
 		r.setTotal(total);

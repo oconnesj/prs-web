@@ -1,13 +1,18 @@
 package com.prs.business;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+    @JsonIgnore
 	private String userName;
+    @JsonIgnore
 	private String password;
 	private String firstName;
 	private String lastName;
@@ -41,19 +46,20 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+    @JsonIgnore
 	public String getUserName() {
 		return userName;
 	}
-
+    @JsonProperty
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
+	
+    @JsonIgnore
 	public String getPassword() {
 		return password;
 	}
-
+    @JsonProperty
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -106,6 +112,7 @@ public class User {
 		this.isAdmin = isAdmin;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
