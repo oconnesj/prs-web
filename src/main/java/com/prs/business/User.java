@@ -10,7 +10,6 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-    @JsonIgnore
 	private String userName;
     @JsonIgnore
 	private String password;
@@ -46,11 +45,11 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-    @JsonIgnore
+
 	public String getUserName() {
 		return userName;
 	}
-    @JsonProperty
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
